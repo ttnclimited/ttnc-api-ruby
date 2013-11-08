@@ -76,8 +76,9 @@ class TTNCApi
     end
     formatter = REXML::Formatters::Pretty.new(2)
     formatter.compact = true
-    uri = URI.parse("http://xml.ttnc.co.uk/api/")
+    uri = URI.parse("https://xml.ttnc.co.uk/api/")
     http = Net::HTTP.new(uri.host, uri.port)
+    http.use_ssl = true
     req = Net::HTTP::Post.new(uri.path, {'Content-Type' =>'text/xml\r\n'})
     xml_request_content = ''
     formatter.write(@element, xml_request_content)
