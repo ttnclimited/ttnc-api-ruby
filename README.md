@@ -68,7 +68,7 @@ The client deals automatically with the *Auth* requests for you, however, in ord
 	request.setdata('type', 'number');
 	api.makerequest()
 	response = api.getresponsefromid('SessionRequest');
-	// Store response['SessionId'] in your own code.
+	# Store response['SessionId'] in your own code.
 ```
 
 Then on repeat requests, to retrieve the same basket you can construct the object without authentication and then parse in the SessionId to use on Requests;
@@ -76,11 +76,11 @@ Then on repeat requests, to retrieve the same basket you can construct the objec
 ```ruby
 	require TTNCApi
 	api = TTNCApi.new();
-	api.usesession(sessionId) // From the previous request, stored in your own code.
+	api.usesession(sessionId) # From the previous request, stored in your own code.
 	request = api.newrequest('Order', 'ViewBasket', 'Request1Id');
 	api.makerequest()
 	response = request.getresponse()
-	// Response now contains a representation of your basket.
+	# Response now contains a representation of your basket.
 ```
 
 ## Getting Support
